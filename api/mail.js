@@ -81,14 +81,11 @@ function handleDOM(dom) {
   }
 }
 
-exports.handler = function (event, context, callback) {
+module.exports = (req, res) => {
   JSDOM.fromURL('https://sigma1x2.com/')
     .then(handleDOM)
     .catch((err) => {
       console.warn('Something went wrong.', err);
     });
-  callback(null, {
-    statusCode: 200,
-    body: 'hello world',
-  });
+  res.send('okay');
 };
