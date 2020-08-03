@@ -68,7 +68,7 @@ function handleDOM(dom) {
   const date = Array.from(x).find((e) => {
     console.log(e.textContent);
     return e.textContent.split(' ')[1].split(',')[0] === today;
-  })?.innerHTML;
+  }).innerHTML;
   if (date) {
     let bet = x[0]
       .closest('.post-content')
